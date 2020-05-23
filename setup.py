@@ -5,6 +5,7 @@ setup(name='eautils',
       description='utilities functions for egoanalytics projects',
       author='Ego Analytics',
       author_email='kevin@egoanalytics.com',
+      install_requires=[ 'python-dateutil>=2.8.1' ],
       packages=['eautils',
                 'eautils.date',
                 'eautils.datafiles']
