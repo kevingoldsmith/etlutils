@@ -2,3 +2,4 @@ eautils-venv/
 eautils/__pycache__/
 eautils.egg-info/
 *__pycache__*
+.vscode/
