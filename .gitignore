@@ -3,3 +3,4 @@ eautils/__pycache__/
 eautils.egg-info/
 *__pycache__*
 .vscode/
+.DS_Store

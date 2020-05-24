@@ -24,7 +24,7 @@ def mkdate(datestr):
         raise ValueError(f'{datestr} is not a proper date string')
 
 
-def get_date_from_timestamp(timestamp, offset):
+def get_date_from_timestamp(timestamp, offset=0):
     """creates a datetime.datetime object from a timestamp with offset
 
     Using a twitter-style timestamp and offset return a datetime object
