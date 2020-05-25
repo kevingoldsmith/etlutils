@@ -10,4 +10,10 @@ update:
 requirements:
 	pip freeze --exclude-editable > requirements.txt
 
-.PHONY: init test update requirements
+clean:
+	rm -rf *.egg-info
+	find . -name '*.pyc' -exec rm -f {} +
+	find . -name '*.pyo' -exec rm -f {} +
+	name '*~' -exec rm -f  {}
+
+.PHONY: init test update requirements clean

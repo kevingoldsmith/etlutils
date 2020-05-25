@@ -1,4 +1,4 @@
-from eautils.date import *
+from etlutils.date import *
 import pytest
 import datetime
 import time
@@ -18,6 +18,6 @@ def test_get_date_from_timestamp():
     assert get_date_from_timestamp(timestamp, 6) == datetime.datetime(2020, 5, 24, 5, 55, 16, 217945, tzinfo=dateutil.tz.tzoffset(None, 360))
 
 
-def test_datetime_from_string():
-    assert datetime_from_string("2011-08-12T20:17:46.384Z") == datetime.datetime(2011, 8, 12, 20, 17, 46, 384000)
+def test_datetime_from_zulutime_string():
+    assert datetime_from_zulutime_string("2011-08-12T20:17:46.384Z") == datetime.datetime(2011, 8, 12, 20, 17, 46, 384000)
 

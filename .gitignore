@@ -1,6 +1,5 @@
-eautils-venv/
-eautils/__pycache__/
-eautils.egg-info/
+etlutils-venv/
 *__pycache__*
 .vscode/
 .DS_Store
+etlutils.egg-info/

@@ -1,4 +1,4 @@
-from eautils.datafiles import *
+from etlutils.datafiles import *
 import os
 import pytest
 import shutil

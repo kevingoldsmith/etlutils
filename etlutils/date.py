@@ -39,7 +39,7 @@ def get_date_from_timestamp(timestamp, offset=0):
     return datetime.datetime.fromtimestamp(timestamp, tz=dateutil.tz.tzoffset(None, offset*60))
 
 
-def datetime_from_string(utc_time_string):
+def datetime_from_zulutime_string(utc_time_string):
     """Given a utc_time_string, create a datetime.datetime object
 
     creates a datetime object from a utc-formatted time string

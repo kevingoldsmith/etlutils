@@ -1,7 +1,7 @@
 import readline
 from collections import OrderedDict
-import eautils.date
-import eautils.datafiles
+import etlutils.date
+import etlutils.datafiles
 
 
 def get_interactive_history():
