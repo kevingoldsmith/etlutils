@@ -3,3 +3,4 @@ etlutils-venv/
 .vscode/
 .DS_Store
 etlutils.egg-info/
+etlutil-venv/
