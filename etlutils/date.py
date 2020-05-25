@@ -6,20 +6,22 @@ import dateutil.tz
 def mkdate(datestr):
     """Creates a date object for a string in the format YYYY-MM-DD
 
-    useful for parsing a data from the command line or from a filename or in a file
+    useful for parsing a data from the command line or from a filename or in a
+    file
 
     Args:
         datestr: a string in the format "YYYY-MM-DD"
-    
+
     Returns:
-        a datetime.date object 
+        a datetime.date object
 
     Raises:
         ValueError: if the string is in the wrong format
     """
     try:
         fulltime = time.strptime(datestr, '%Y-%m-%d')
-        return datetime.date(fulltime.tm_year, fulltime.tm_mon, fulltime.tm_mday)
+        return datetime.date(fulltime.tm_year, fulltime.tm_mon,
+                             fulltime.tm_mday)
     except ValueError:
         raise ValueError(f'{datestr} is not a proper date string')
 
@@ -32,11 +34,13 @@ def get_date_from_timestamp(timestamp, offset=0):
     Args:
         timestamp: a unix-type timestamp
         offset: a timezone offset in minutes from GMT
-    
+
     Returns:
-        a datetime.datetime object 
+        a datetime.datetime object
     """
-    return datetime.datetime.fromtimestamp(timestamp, tz=dateutil.tz.tzoffset(None, offset*60))
+    return datetime.datetime.fromtimestamp(timestamp,
+                                           tz=dateutil.tz.tzoffset(None,
+                                                                   offset*60))
 
 
 def datetime_from_zulutime_string(utc_time_string):
@@ -46,8 +50,8 @@ def datetime_from_zulutime_string(utc_time_string):
 
     Args:
         utc_time_string: utc formatting string
-    
+
     Returns:
-        a datetime.datetime object 
+        a datetime.datetime object
     """
     return datetime.datetime.strptime(utc_time_string, '%Y-%m-%dT%H:%M:%S.%fZ')
