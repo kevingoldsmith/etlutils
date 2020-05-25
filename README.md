@@ -2,6 +2,14 @@
 
 This is a collection of utility functions for my etl projects. Sharing as they might be useful to others as well.
 
+## current version
+
+The current version is 0.1 as this is a very early release. Use at your own risk as things will change.
+
+## installing with pip
+
+    pip install etlutils
+
 ## building for development
 
     make init
