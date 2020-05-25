@@ -23,5 +23,5 @@ setup(name='etlutils',
             'Programming Language :: Python :: 3.9'
       ],
       install_requires=['python-dateutil>=2.8.1'],
-      python_requires=['>=3.6'],
+      python_requires='>=3.6',
       packages=['etlutils'])
