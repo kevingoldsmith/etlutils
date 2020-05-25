@@ -4,3 +4,7 @@ etlutils-venv/
 .DS_Store
 etlutils.egg-info/
 etlutil-venv/
+build/
+dist/
+pypirc
+test.pypirc

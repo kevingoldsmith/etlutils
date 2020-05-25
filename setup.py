@@ -2,7 +2,9 @@ from setuptools import setup
 
 setup(name='etlutils',
       version='0.1',
-      description='utilities functions for egoanalytics projects',
+      description='utilities functions for etl projects',
+      long_description='a collection of utilities functions useful for ETL projects',
+      long_description_content_type='text/plain',
       author='Kevin Goldsmith',
       author_email='github@kevingoldsmith.com',
       url='https://github.com/kevingoldsmith/etlutils',
