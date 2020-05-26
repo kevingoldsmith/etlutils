@@ -17,6 +17,12 @@ build:
 	python setup.py sdist
 	python setup.py bdist_wheel
 
+testdist:
+	twine upload --repository testpypi dist/*
+
+dist:
+	twine upload dist/*
+
 clean:
 	rm -rf *.egg-info
 	rm -rf build

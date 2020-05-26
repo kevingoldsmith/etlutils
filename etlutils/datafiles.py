@@ -140,6 +140,35 @@ def dump_to_monthly_json_file(directory, year, month, data, datatype=''):
     return filename
 
 
+def dump_to_daily_json_file(directory, year, month, day, data, datatype=''):
+    """saves data to a daily file stored in JSON
+
+    this function will create the directories if needed and will set up the
+    filename in a consistent way (using the get_daily_file_path method).
+    the format is of the structure
+    <directory>/<year>/<year>-<month>-<day>/<datatype>.<file_extension>
+
+    Args:
+        directory: the directory under which the path to the day is created
+        year: the integer year to append, will expand to four digits if fewer,
+              does not validate
+        month: the integer month to append, will expand to two digits if fewer,
+               does not validate
+        day: the integer day to append, will expand to two digits if fewer,
+             does not validate
+        data: a JSON serializable data structure
+        datatype: the root of the filename
+
+    Returns
+        The path to the filename that was created
+    """
+    filename = get_daily_file_path(directory, datatype, year, month, day)
+    with open(filename, "w") as f:
+        f.write(json.dumps(data, indent=2))
+    time.sleep(1)
+    return filename
+
+
 def find_newest_saved_month(directory, end_year, datatype=''):
     """finds the last saved file for data stored by month
 

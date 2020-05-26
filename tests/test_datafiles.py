@@ -1,4 +1,4 @@
-from etlutils.datafiles import get_daily_file_path, get_monthly_file_path, get_yearly_file_path, dump_to_monthly_json_file, find_newest_saved_month  # noqa: E501
+from etlutils.datafiles import get_daily_file_path, get_monthly_file_path, get_yearly_file_path, dump_to_monthly_json_file, dump_to_daily_json_file, find_newest_saved_month  # noqa: E501
 import os
 import pytest
 import shutil
@@ -56,6 +56,21 @@ def test_dump_to_monthly_json_file(cleandir):
     assert dump_to_monthly_json_file('data', 2020, 5, {'bar': 'baz'}) == 'data/2020/2020-05.json'  # noqa: E501
     assert os.path.exists('data/2020/2020-05.json')
     with open('data/2020/2020-05.json', 'r') as f:
+        data = json.load(f)
+    assert data == {'bar': 'baz'}
+
+
+def test_dump_to_daily_json_file(cleandir):
+    assert not os.path.exists('data')
+    assert dump_to_daily_json_file('data', 2020, 5, 4, {'foo': 'bar'}, 'blah') == 'data/2020/2020-05-04/blah.json'  # noqa: E501
+    assert os.path.exists('data/2020/2020-05-04/blah.json')
+    with open('data/2020/2020-05-04/blah.json', 'r') as f:
+        data = json.load(f)
+    assert data == {'foo': 'bar'}
+
+    assert dump_to_daily_json_file('data', 2020, 5, 2, {'bar': 'baz'}) == 'data/2020/2020-05-02/.json'  # noqa: E501
+    assert os.path.exists('data/2020/2020-05-02/.json')
+    with open('data/2020/2020-05-02/.json', 'r') as f:
         data = json.load(f)
     assert data == {'bar': 'baz'}
 
