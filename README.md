@@ -1,3 +1,8 @@
+[![PyPI version](https://badge.fury.io/py/etlutils.svg)](https://pypi.org/project/etlutils/)
+[![Python versions](https://img.shields.io/pypi/pyversions/etlutils)](https://pypi.org/project/etlutils/)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/kevingoldsmith/etlutils/issues)
+[![Twitter](https://img.shields.io/twitter/follow/kevingoldsmith?style=plastic)](https://img.shields.io/twitter/follow/kevingoldsmith?style=plastic)
+
 # etlutils
 
 This is a collection of utility functions for my etl projects. Sharing as they might be useful to others as well.
