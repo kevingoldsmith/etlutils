@@ -1,3 +1,7 @@
+"""etlutils.date consists of functions useful for manipulating or converting
+dates between different formats
+"""
+
 import datetime
 import time
 import dateutil.tz

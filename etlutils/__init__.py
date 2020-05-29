@@ -1,3 +1,7 @@
+"""etlutils root contains utility functions that do not currently have a home
+    in any submodules.
+"""
+
 import readline
 from collections import OrderedDict
 import etlutils.date

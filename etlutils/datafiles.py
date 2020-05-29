@@ -1,3 +1,7 @@
+"""etlutils.datafiles contains methods useful for producing and consuming data
+for structured data
+"""
+
 import os
 import time
 import dateutil
