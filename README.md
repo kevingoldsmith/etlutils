@@ -1,5 +1,6 @@
 [![PyPI version](https://badge.fury.io/py/etlutils.svg)](https://pypi.org/project/etlutils/)
 [![Python versions](https://img.shields.io/pypi/pyversions/etlutils)](https://pypi.org/project/etlutils/)
+[![Documentation Status](https://readthedocs.org/projects/etlutils/badge/?version=latest)](https://etlutils.readthedocs.io/en/latest/?badge=latest)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/kevingoldsmith/etlutils/issues)
 [![Twitter](https://img.shields.io/twitter/follow/kevingoldsmith?style=plastic)](https://img.shields.io/twitter/follow/kevingoldsmith?style=plastic)
 
@@ -10,6 +11,10 @@ This is a collection of utility functions for my etl projects. Sharing as they m
 ## current version
 
 The current version is 0.1 as this is a very early release. Use at your own risk as things will change.
+
+## documentation
+
+Read the documentation on [readthedocs](https://etlutils.readthedocs.io/en/latest/)
 
 ## installing with pip
 
