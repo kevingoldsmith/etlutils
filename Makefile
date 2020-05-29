@@ -4,6 +4,9 @@ init:
 test:
 	py.test tests
 
+coverage:
+	pytest --cov=etlutils
+
 lint:
 	flake8 etlutils tests
 
