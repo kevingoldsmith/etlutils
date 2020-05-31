@@ -5,4 +5,3 @@ etlutils
    :maxdepth: 4
 
    etlutils
-   setup
