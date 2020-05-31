@@ -1,10 +1,16 @@
 from setuptools import setup
+from os import path
+
+
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(name='etlutils',
-      version='0.1',
+      version='0.2',
       description='utilities functions for etl projects',
-      long_description='a collection of utilities functions useful for ETL projects',
-      long_description_content_type='text/plain',
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       author='Kevin Goldsmith',
       author_email='github@kevingoldsmith.com',
       url='https://github.com/kevingoldsmith/etlutils',
