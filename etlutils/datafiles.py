@@ -10,6 +10,15 @@ import json
 import dateutil.relativedelta
 
 
+def __dump_json_file(file_path, data, indent=True):
+    with open(file_path, "w") as f:
+        if indent:
+            f.write(json.dumps(data, indent=2))
+        else:
+            f.write(json.dumps(data))
+    time.sleep(1)
+
+
 def get_yearly_file_path(directory, datatype, year, file_extension='json',
                          make_directories=True):
     """puts together a path to a file for data that is saved by year
@@ -64,12 +73,9 @@ def get_monthly_file_path(directory, datatype, year, month,
     Returns:
         A string path composed of the arguments
     """
-    path = directory
-    if make_directories and path and (not os.path.exists(path)):
-        os.mkdir(path)
-    path = os.path.join(path, f'{year:04}')
-    if make_directories and (not os.path.exists(path)):
-        os.mkdir(path)
+    path = os.path.join(directory, f'{year:04}')
+    if make_directories:
+        os.makedirs(path, exist_ok=True)
     rootname = ''
     if datatype:
         rootname = datatype + '_'
@@ -103,16 +109,36 @@ def get_daily_file_path(directory, datatype, year, month, day,
     Returns:
         A string path composed of the arguments
     """
-    path = directory
-    if make_directories and path and (not os.path.exists(path)):
-        os.mkdir(path)
-    path = os.path.join(path, f'{year:04}')
-    if make_directories and (not os.path.exists(path)):
-        os.mkdir(path)
-    path = os.path.join(path, f'{year:04}-{month:02}-{day:02}')
-    if make_directories and (not os.path.exists(path)):
-        os.mkdir(path)
+    path = os.path.join(directory, f'{year:04}',
+                        f'{year:04}-{month:02}-{day:02}')
+    if make_directories:
+        os.makedirs(path, exist_ok=True)
     return os.path.join(path, f'{datatype}.{file_extension}')
+
+
+def dump_to_yearly_json_file(directory, year, data, datatype=''):
+    """saves data to a yearly file stored in JSON
+
+    will create the directories if needed and set up the filename in a
+    consistent way, doesn't do any error checking, so empty strings are not
+    illegal, but will product crummy filenames
+
+    the format of the path is
+    <directory>/<datatype>_<year>.json
+
+    Args:
+        directory: the directory under which the file will be created
+        year: the integer year to append, will expand to four digits if fewer,
+              does not validate
+        data: a JSON serializable data structure
+        datatype: the root of the filename
+
+    Returns:
+        The path to the file that was created
+    """
+    filename = get_yearly_file_path(directory, datatype, year)
+    __dump_json_file(filename, data)
+    return filename
 
 
 def dump_to_monthly_json_file(directory, year, month, data, datatype=''):
@@ -122,8 +148,8 @@ def dump_to_monthly_json_file(directory, year, month, data, datatype=''):
     consistent way. doesn't do any error checking, so empty strings are not
     illegal, but will produce crummy filenames
 
-    the format is of the path is
-    <directory>/<year>/<datatype>_<year>-<month>.<file_extension>
+    the format of the path is
+    <directory>/<year>/<datatype>_<year>-<month>.json
 
     Args:
         directory: the directory under which the file will be created
@@ -138,9 +164,7 @@ def dump_to_monthly_json_file(directory, year, month, data, datatype=''):
         The path to the file that was created
     """
     filename = get_monthly_file_path(directory, datatype, year, month)
-    with open(filename, "w") as f:
-        f.write(json.dumps(data, indent=2))
-    time.sleep(1)
+    __dump_json_file(filename, data)
     return filename
 
 
@@ -167,9 +191,7 @@ def dump_to_daily_json_file(directory, year, month, day, data, datatype=''):
         The path to the filename that was created
     """
     filename = get_daily_file_path(directory, datatype, year, month, day)
-    with open(filename, "w") as f:
-        f.write(json.dumps(data, indent=2))
-    time.sleep(1)
+    __dump_json_file(filename, data)
     return filename
 
 
