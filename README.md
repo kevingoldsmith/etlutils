@@ -1,6 +1,7 @@
 [![PyPI version](https://badge.fury.io/py/etlutils.svg)](https://pypi.org/project/etlutils/)
 [![Python versions](https://img.shields.io/pypi/pyversions/etlutils)](https://pypi.org/project/etlutils/)
 [![Documentation Status](https://readthedocs.org/projects/etlutils/badge/?version=latest)](https://etlutils.readthedocs.io/en/latest/?badge=latest)
+![Python package](https://github.com/kevingoldsmith/etlutils/workflows/Python%20package/badge.svg)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/kevingoldsmith/etlutils/issues)
 [![Twitter](https://img.shields.io/twitter/follow/kevingoldsmith?style=plastic)](https://img.shields.io/twitter/follow/kevingoldsmith?style=plastic)
 
