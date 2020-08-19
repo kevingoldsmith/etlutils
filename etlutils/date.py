@@ -58,4 +58,9 @@ def datetime_from_zulutime_string(utc_time_string):
     Returns:
         a datetime.datetime object
     """
-    return datetime.datetime.strptime(utc_time_string, '%Y-%m-%dT%H:%M:%S.%fZ')
+
+    try:
+        return datetime.datetime.strptime(utc_time_string, '%Y-%m-%dT%H:%M:%S.%fZ')
+    except ValueError:
+        # this sometimes happens if the fractional value is left off the seconds
+        return datetime.datetime.strptime(utc_time_string, '%Y-%m-%dT%H:%M:%SZ')
