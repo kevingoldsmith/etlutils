@@ -11,7 +11,7 @@ This is a collection of utility functions for my etl projects. Sharing as they m
 
 ## current version
 
-The current version is 0.2 as this is a very early release. Use at your own risk as things will change.
+The current version is 0.2.2 as this is a very early release. Use at your own risk as things will change.
 
 ## documentation
 
