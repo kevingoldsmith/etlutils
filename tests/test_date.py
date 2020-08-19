@@ -21,3 +21,4 @@ def test_get_date_from_timestamp():
 
 def test_datetime_from_zulutime_string():
     assert datetime_from_zulutime_string("2011-08-12T20:17:46.384Z") == datetime.datetime(2011, 8, 12, 20, 17, 46, 384000)  # noqa: E501
+    assert datetime_from_zulutime_string("2011-08-12T20:17:46Z") == datetime.datetime(2011, 8, 12, 20, 17, 46, 0)  # noqa: E501
