@@ -8,7 +8,7 @@ coverage==5.1
 docutils==0.16
 -e git+https://github.com/kevingoldsmith/etlutils.git@5b49139e9d03b19de71318edb78c95f5c827fba1#egg=etlutils
 flake8==3.8.2
-idna==2.9
+idna==3.7
 imagesize==1.2.0
 Jinja2==2.11.3
 keyring==21.2.1
